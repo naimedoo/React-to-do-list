@@ -21,9 +21,9 @@ export default function App () {
   return (
     <>
     <TacheContext.Provider value={state}>
+    <TaskList/>
       <Tasks/>
-      <TaskList/>
-   </TacheContext.Provider>
+    </TacheContext.Provider>
     </>
   )
 
