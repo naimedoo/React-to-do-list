@@ -1,27 +1,54 @@
+import Tasks from './Components/Tasks';
 import TaskList from './Components/TaskList';
-import Task from './Components/Taxk';
 import './App.css';
 import { createContext,useState } from 'react';
 
-export const TitreContext= createContext({});
+
+
+ export const TacheContext= createContext({});
 
 export default function App () {
-    const [Tasks,setTask] = useState(
-      [
-  { id: 1, title: 'Tache 01', priority: 'Important'},        
-  { id: 2, title: 'Tache 02', priority: 'Urgent'}   
-    ]
-)
-const titleTask = {
-  title: Tasks,
-  changeTask:setTask
-}
-return (
+  const [Taches, setTaches] = useState(
+    [
+      { id: 1, title: 'Tache 01', priority: 'Important'},        
+      { id: 2, title: 'Tache 02', priority: 'Urgent'}   
+   ]
+  )
+  const state = {
+    Taches: Taches,
+    setTaches:setTaches
+  }
+  return (
     <>
-    <TitreContext.Provider value={titleTask}>
-      <TaskList />
-      <Task/>
-    </TitreContext.Provider>
+    <TacheContext.Provider value={state}>
+      <Tasks/>
+      <TaskList/>
+   </TacheContext.Provider>
     </>
   )
+
+
 }
+
+
+
+
+
+//     const [Tasks,setTask] = useState(
+//       [
+//   { id: 1, title: 'Tache 01', priority: 'Important'},        
+//   { id: 2, title: 'Tache 02', priority: 'Urgent'}   
+//     ]
+// )
+// const state= {
+//   title: Tasks,
+//   changeTask:setTask
+// }
+// return (
+//     <>
+//     <TacheContext.Provider value={state}>
+//       <TaskList />
+//       <Task/>
+//     </TacheContext.Provider>
+//     </>
+//   )
